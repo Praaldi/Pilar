@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Demo Login - PILAR</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .demo-container {
+      width: 100%;
+      max-width: 540px;
+    }
+
+    .demo-header {
+      text-align: center;
+      margin-bottom: 32px;
+      color: white;
+    }
+
+    .demo-logo {
+      width: 60px;
+      height: 60px;
+      background: #7C3AED;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 900;
+      color: white;
+      margin: 0 auto 16px;
+    }
+
+    .demo-header h1 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .demo-header p {
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+    .demo-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .demo-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: white;
+    }
+
+    .demo-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .demo-card-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .demo-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+    }
+
+    .icon-siswa {
+      background: rgba(59, 130, 246, 0.3);
+    }
+
+    .icon-lembaga {
+      background: rgba(16, 185, 129, 0.3);
+    }
+
+    .icon-admin {
+      background: rgba(124, 58, 237, 0.3);
+    }
+
+    .demo-card-name {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .demo-card-email {
+      font-size: 12px;
+      opacity: 0.6;
+      margin-bottom: 4px;
+    }
+
+    .demo-card-role {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 9999px;
+    }
+
+    .role-siswa {
+      background: rgba(59, 130, 246, 0.3);
+      color: #93C5FD;
+    }
+
+    .role-lembaga {
+      background: rgba(16, 185, 129, 0.3);
+      color: #6EE7B7;
+    }
+
+    .role-admin {
+      background: rgba(124, 58, 237, 0.3);
+      color: #C4B5FD;
+    }
+
+    .demo-card-arrow {
+      font-size: 20px;
+      opacity: 0.5;
+    }
+
+    .demo-login-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: #7C3AED;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      margin-top: 20px;
+      transition: background 0.2s;
+    }
+
+    .demo-login-btn:hover {
+      background: #6D28D9;
+    }
+
+    .demo-note {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 12px;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo-container">
+    <div class="demo-header">
+      <div class="demo-logo">P</div>
+      <h1>Demo Akun PILAR</h1>
+      <p>Klik salah satu akun untuk masuk langsung ke dashboardnya</p>
+    </div>
+
+    <div class="demo-cards">
+      <div class="demo-card" onclick="loginAs('siswa')">
+        <div class="demo-card-info">
+          <div class="demo-card-icon icon-siswa">🎓</div>
+          <div>
+            <div class="demo-card-name">Andi Pratama</div>
+            <div class="demo-card-email">siswa@pilar.id &nbsp;·&nbsp; Password: demo123</div>
+            <span class="demo-card-role role-siswa">Siswa</span>
+          </div>
+        </div>
+        <div class="demo-card-arrow">→</div>
+      </div>
+
+      <div class="demo-card" onclick="loginAs('lembaga')">
+        <div class="demo-card-info">
+          <div class="demo-card-icon icon-lembaga">🏫</div>
+          <div>
+            <div class="demo-card-name">Primagama (Jaksel)</div>
+            <div class="demo-card-email">lembaga@pilar.id &nbsp;·&nbsp; Password: demo123</div>
+            <span class="demo-card-role role-lembaga">Lembaga Bimbel</span>
+          </div>
+        </div>
+        <div class="demo-card-arrow">→</div>
+      </div>
+
+      <div class="demo-card" onclick="loginAs('admin')">
+        <div class="demo-card-info">
+          <div class="demo-card-icon icon-admin">🛡️</div>
+          <div>
+            <div class="demo-card-name">Admin PILAR</div>
+            <div class="demo-card-email">admin@pilar.id &nbsp;·&nbsp; Password: admin123</div>
+            <span class="demo-card-role role-admin">Admin</span>
+          </div>
+        </div>
+        <div class="demo-card-arrow">→</div>
+      </div>
+    </div>
+
+    <a href="login.html" class="demo-login-btn">Atau Login dengan Akun Sendiri →</a>
+    <div class="demo-note">Akun demo disimpan di localStorage browser Anda</div>
+  </div>
+
+  <script>
+
+    const demoUsers = [
+      { firstName: 'Andi', lastName: 'Pratama', email: 'siswa@pilar.id', role: 'siswa', password: 'demo123', createdAt: new Date().toISOString() },
+      { firstName: 'Primagama', lastName: 'Jaksel', email: 'lembaga@pilar.id', role: 'lembaga', password: 'demo123', createdAt: new Date().toISOString() },
+      { firstName: 'Admin', lastName: 'PILAR', email: 'admin@pilar.id', role: 'admin', password: 'admin123', createdAt: new Date().toISOString() },
+    ];
+
+    const existing = JSON.parse(localStorage.getItem('pilar_users') || '[]');
+    demoUsers.forEach(demo => {
+      if (!existing.find(u => u.email === demo.email)) {
+        existing.push(demo);
+      }
+    });
+    localStorage.setItem('pilar_users', JSON.stringify(existing));
+
+    function loginAs(role) {
+      const map = {
+        siswa: { email: 'siswa@pilar.id', name: 'Andi Pratama', dest: 'dashboard-siswa.html' },
+        lembaga: { email: 'lembaga@pilar.id', name: 'Primagama Jaksel', dest: 'dashboard-lembaga.html' },
+        admin: { email: 'admin@pilar.id', name: 'Admin PILAR', dest: 'dashboard-admin.html' },
+      };
+      const target = map[role];
+      localStorage.setItem('pilar_session', JSON.stringify({
+        email: target.email, name: target.name, role: role, loggedIn: true
+      }));
+      window.location.href = target.dest;
+    }
+  </script>
+</body>
+
+</html>

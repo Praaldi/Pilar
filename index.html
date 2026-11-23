@@ -1,0 +1,535 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PILAR - Pusat Informasi dan Layanan Akses Bimbingan Belajar</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <div class="navbar-logo">P</div>
+        <span class="navbar-brand-text"><span>PILAR</span></span>
+      </a>
+
+      <div class="navbar-menu" id="navbarMenu">
+        <div class="navbar-links">
+          <a href="#beranda" class="active">Beranda</a>
+          <a href="#fitur">Fitur</a>
+          <a href="#cara-kerja">Cara Kerja</a>
+          <a href="#bimbel">Bimbel</a>
+          <a href="#testimoni">Testimoni</a>
+        </div>
+        <div class="navbar-actions">
+          <a href="login.html" class="btn btn-outline btn-sm">Masuk</a>
+          <a href="register.html" class="btn btn-primary btn-sm">Daftar</a>
+        </div>
+      </div>
+
+      <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+<section class="hero" id="beranda">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Platform Bimbel #1 di Indonesia
+        </div>
+        <h1 class="hero-title">
+          Temukan <span class="highlight">Bimbel Terbaik</span> untuk Masa Depan Cerah
+        </h1>
+        <p class="hero-description">
+          PILAR membantu siswa SD hingga SMA dan orang tua menemukan lembaga bimbingan belajar
+          yang sesuai dengan kebutuhan, lokasi, dan kemampuan biaya.
+        </p>
+        <div class="hero-buttons">
+          <a href="#bimbel" class="btn btn-white btn-lg">🔍 Cari Bimbel</a>
+          <a href="register.html" class="btn btn-accent btn-lg">Daftar Gratis</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-number">500+</div>
+            <div class="hero-stat-label">Lembaga Bimbel</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">10K+</div>
+            <div class="hero-stat-label">Siswa Terdaftar</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">34</div>
+            <div class="hero-stat-label">Kota</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-illustration">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="hero-card-icon">📚</div>
+            <div>
+              <div class="hero-card-title">Rekomendasi Hari Ini</div>
+              <div class="hero-card-subtitle">Berdasarkan pencarian terakhir</div>
+            </div>
+          </div>
+          <div class="hero-card-items">
+            <div class="hero-card-item">
+              <div class="hero-card-item-icon">🎓</div>
+              <div>
+                <div class="hero-card-item-text">Bimbel Prestasi Utama</div>
+                <div class="hero-card-item-sub">Jakarta Selatan • Rp 500rb/bln</div>
+              </div>
+            </div>
+            <div class="hero-card-item">
+              <div class="hero-card-item-icon">📐</div>
+              <div>
+                <div class="hero-card-item-text">Cerdas Akademi</div>
+                <div class="hero-card-item-sub">Bandung • Rp 450rb/bln</div>
+              </div>
+            </div>
+            <div class="hero-card-item">
+              <div class="hero-card-item-icon">🧪</div>
+              <div>
+                <div class="hero-card-item-text">Einstein Learning Center</div>
+                <div class="hero-card-item-sub">Surabaya • Rp 600rb/bln</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="search-section" id="cari">
+    <div class="container">
+      <div class="search-bar">
+        <div class="search-field">
+          <label for="searchKeyword">Kata Kunci</label>
+          <input type="text" id="searchKeyword" placeholder="Nama bimbel atau mata pelajaran...">
+        </div>
+        <div class="search-field">
+          <label for="searchLocation">Lokasi</label>
+          <select id="searchLocation">
+            <option value="">Semua Lokasi</option>
+            <option value="jakarta">Jakarta</option>
+            <option value="bandung">Bandung</option>
+            <option value="surabaya">Surabaya</option>
+            <option value="yogyakarta">Yogyakarta</option>
+            <option value="semarang">Semarang</option>
+            <option value="medan">Medan</option>
+            <option value="makassar">Makassar</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label for="searchPrice">Kisaran Harga</label>
+          <select id="searchPrice">
+            <option value="">Semua Harga</option>
+            <option value="0-300000">Di bawah Rp 300rb</option>
+            <option value="300000-500000">Rp 300rb - Rp 500rb</option>
+            <option value="500000-1000000">Rp 500rb - Rp 1jt</option>
+            <option value="1000000+">Di atas Rp 1jt</option>
+          </select>
+        </div>
+        <button class="btn btn-primary search-btn" onclick="handleSearch()">
+          🔍 Cari
+        </button>
+      </div>
+    </div>
+  </section>
+
+<section class="section" id="fitur">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Fitur Unggulan</span>
+        <h2 class="section-title">Semua yang Anda Butuhkan</h2>
+        <p class="section-subtitle">
+          PILAR menyediakan berbagai fitur untuk memudahkan pencarian bimbingan belajar terbaik.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🔍</div>
+          <h3 class="feature-title">Pencarian Cerdas</h3>
+          <p class="feature-description">
+            Cari lembaga bimbingan belajar berdasarkan kata kunci, nama lembaga,
+            atau mata pelajaran yang diinginkan.
+          </p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon">📍</div>
+          <h3 class="feature-title">Filter Lokasi & Harga</h3>
+          <p class="feature-description">
+            Filter pencarian berdasarkan lokasi dan kisaran harga sesuai
+            kemampuan biaya keluarga Anda.
+          </p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon">⚖️</div>
+          <h3 class="feature-title">Bandingkan Bimbel</h3>
+          <p class="feature-description">
+            Bandingkan informasi, program, fasilitas, dan biaya dari
+            beberapa lembaga bimbel sekaligus.
+          </p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon">📋</div>
+          <h3 class="feature-title">Detail Lengkap</h3>
+          <p class="feature-description">
+            Lihat profil lengkap lembaga termasuk program, jadwal, fasilitas,
+            biaya, dan kontak.
+          </p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon">✅</div>
+          <h3 class="feature-title">Terverifikasi Admin</h3>
+          <p class="feature-description">
+            Semua informasi lembaga telah diverifikasi oleh admin untuk
+            memastikan keakuratan data.
+          </p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon">📢</div>
+          <h3 class="feature-title">Promosi Lembaga</h3>
+          <p class="feature-description">
+            Pemilik bimbel dapat mempromosikan lembaganya dan menjangkau
+            lebih banyak calon siswa.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="section how-it-works" id="cara-kerja">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Cara Kerja</span>
+        <h2 class="section-title">Mudah dan Cepat</h2>
+        <p class="section-subtitle">
+          Hanya 4 langkah untuk menemukan bimbel yang tepat untuk Anda.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card fade-in">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Daftar Akun</h3>
+          <p class="step-description">
+            Buat akun gratis sebagai siswa/orang tua atau pemilik lembaga bimbel.
+          </p>
+        </div>
+
+        <div class="step-card fade-in">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Cari Bimbel</h3>
+          <p class="step-description">
+            Masukkan kata kunci dan gunakan filter lokasi serta harga.
+          </p>
+        </div>
+
+        <div class="step-card fade-in">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Bandingkan</h3>
+          <p class="step-description">
+            Bandingkan beberapa bimbel berdasarkan program, fasilitas, dan biaya.
+          </p>
+        </div>
+
+        <div class="step-card fade-in">
+          <div class="step-number">4</div>
+          <h3 class="step-title">Hubungi</h3>
+          <p class="step-description">
+            Hubungi langsung lembaga bimbel pilihan Anda melalui kontak tersedia.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="section" id="bimbel">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Rekomendasi</span>
+        <h2 class="section-title">Bimbel Populer</h2>
+        <p class="section-subtitle">
+          Lembaga bimbingan belajar terpopuler dan terverifikasi di PILAR.
+        </p>
+      </div>
+
+      <div class="bimbel-grid" id="bimbelGrid">
+        
+        <div class="bimbel-card fade-in">
+          <div class="bimbel-card-image">
+            🏫
+            <span class="bimbel-card-badge">Terverifikasi</span>
+          </div>
+          <div class="bimbel-card-body">
+            <h3 class="bimbel-card-name">Bimbel Prestasi Utama</h3>
+            <div class="bimbel-card-location">📍 Jakarta Selatan</div>
+            <div class="bimbel-card-tags">
+              <span class="bimbel-tag">Matematika</span>
+              <span class="bimbel-tag">Fisika</span>
+              <span class="bimbel-tag">SMA</span>
+            </div>
+            <div class="bimbel-card-footer">
+              <div class="bimbel-price">Rp 500rb <span>/bulan</span></div>
+              <div class="bimbel-rating">⭐ 4.8</div>
+            </div>
+          </div>
+        </div>
+
+<div class="bimbel-card fade-in">
+          <div class="bimbel-card-image">
+            🎓
+            <span class="bimbel-card-badge">Terverifikasi</span>
+          </div>
+          <div class="bimbel-card-body">
+            <h3 class="bimbel-card-name">Cerdas Akademi</h3>
+            <div class="bimbel-card-location">📍 Bandung</div>
+            <div class="bimbel-card-tags">
+              <span class="bimbel-tag">IPA</span>
+              <span class="bimbel-tag">IPS</span>
+              <span class="bimbel-tag">SMP</span>
+            </div>
+            <div class="bimbel-card-footer">
+              <div class="bimbel-price">Rp 450rb <span>/bulan</span></div>
+              <div class="bimbel-rating">⭐ 4.7</div>
+            </div>
+          </div>
+        </div>
+
+<div class="bimbel-card fade-in">
+          <div class="bimbel-card-image">
+            🧪
+            <span class="bimbel-card-badge">Terverifikasi</span>
+          </div>
+          <div class="bimbel-card-body">
+            <h3 class="bimbel-card-name">Einstein Learning Center</h3>
+            <div class="bimbel-card-location">📍 Surabaya</div>
+            <div class="bimbel-card-tags">
+              <span class="bimbel-tag">Kimia</span>
+              <span class="bimbel-tag">Biologi</span>
+              <span class="bimbel-tag">SMA</span>
+            </div>
+            <div class="bimbel-card-footer">
+              <div class="bimbel-price">Rp 600rb <span>/bulan</span></div>
+              <div class="bimbel-rating">⭐ 4.9</div>
+            </div>
+          </div>
+        </div>
+
+<div class="bimbel-card fade-in">
+          <div class="bimbel-card-image">
+            📐
+            <span class="bimbel-card-badge">Terverifikasi</span>
+          </div>
+          <div class="bimbel-card-body">
+            <h3 class="bimbel-card-name">Genius Tutor</h3>
+            <div class="bimbel-card-location">📍 Yogyakarta</div>
+            <div class="bimbel-card-tags">
+              <span class="bimbel-tag">Matematika</span>
+              <span class="bimbel-tag">B. Inggris</span>
+              <span class="bimbel-tag">SD</span>
+            </div>
+            <div class="bimbel-card-footer">
+              <div class="bimbel-price">Rp 350rb <span>/bulan</span></div>
+              <div class="bimbel-rating">⭐ 4.6</div>
+            </div>
+          </div>
+        </div>
+
+<div class="bimbel-card fade-in">
+          <div class="bimbel-card-image">
+            📖
+            <span class="bimbel-card-badge">Terverifikasi</span>
+          </div>
+          <div class="bimbel-card-body">
+            <h3 class="bimbel-card-name">Ruang Belajar Indonesia</h3>
+            <div class="bimbel-card-location">📍 Semarang</div>
+            <div class="bimbel-card-tags">
+              <span class="bimbel-tag">Semua Mapel</span>
+              <span class="bimbel-tag">SMP-SMA</span>
+            </div>
+            <div class="bimbel-card-footer">
+              <div class="bimbel-price">Rp 400rb <span>/bulan</span></div>
+              <div class="bimbel-rating">⭐ 4.5</div>
+            </div>
+          </div>
+        </div>
+
+<div class="bimbel-card fade-in">
+          <div class="bimbel-card-image">
+            🌟
+            <span class="bimbel-card-badge">Terverifikasi</span>
+          </div>
+          <div class="bimbel-card-body">
+            <h3 class="bimbel-card-name">Bintang Pelajar</h3>
+            <div class="bimbel-card-location">📍 Medan</div>
+            <div class="bimbel-card-tags">
+              <span class="bimbel-tag">UTBK</span>
+              <span class="bimbel-tag">Olimpiade</span>
+              <span class="bimbel-tag">SMA</span>
+            </div>
+            <div class="bimbel-card-footer">
+              <div class="bimbel-price">Rp 750rb <span>/bulan</span></div>
+              <div class="bimbel-rating">⭐ 4.9</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: var(--spacing-2xl);">
+        <a href="#" class="btn btn-outline btn-lg">Lihat Semua Bimbel →</a>
+      </div>
+    </div>
+  </section>
+
+<section class="section" id="testimoni" style="background-color: var(--gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Testimoni</span>
+        <h2 class="section-title">Apa Kata Mereka?</h2>
+        <p class="section-subtitle">
+          Pengalaman siswa dan orang tua yang telah menggunakan PILAR.
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">
+            "PILAR sangat membantu saya menemukan bimbel yang cocok. Fitur perbandingannya
+            membuat saya bisa memilih dengan lebih mudah!"
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AS</div>
+            <div>
+              <div class="testimonial-name">Andi Saputra</div>
+              <div class="testimonial-role">Siswa SMA Kelas 12</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">
+            "Sebagai orang tua, saya bisa dengan mudah membandingkan biaya dan lokasi
+            bimbel. Sangat praktis dan informatif!"
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SR</div>
+            <div>
+              <div class="testimonial-name">Siti Rahmawati</div>
+              <div class="testimonial-role">Orang Tua Siswa</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">
+            "Sejak mendaftar di PILAR, jumlah siswa baru di lembaga kami meningkat
+            signifikan. Platform yang sangat bermanfaat!"
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">BH</div>
+            <div>
+              <div class="testimonial-name">Budi Hartono</div>
+              <div class="testimonial-role">Pemilik Lembaga Bimbel</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Siap Menemukan Bimbel Terbaik?</h2>
+        <p class="cta-description">
+          Bergabunglah dengan ribuan siswa dan orang tua yang telah menemukan
+          bimbel ideal melalui PILAR.
+        </p>
+        <div class="cta-buttons">
+          <a href="register.html" class="btn btn-white btn-lg">Daftar Sekarang</a>
+          <a href="#bimbel" class="btn btn-outline btn-lg" style="border-color: white; color: white;">Jelajahi Bimbel</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-name">
+            <div class="footer-logo">P</div>
+            <h3>PILAR</h3>
+          </div>
+          <p>
+            Pusat Informasi dan Layanan Akses Bimbingan Belajar.
+            Membantu siswa dan orang tua menemukan bimbel terbaik.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#fitur">Fitur</a></li>
+            <li><a href="#bimbel">Cari Bimbel</a></li>
+            <li><a href="#testimoni">Testimoni</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Layanan</h4>
+          <ul>
+            <li><a href="#">Pencarian Bimbel</a></li>
+            <li><a href="#">Perbandingan</a></li>
+            <li><a href="#">Daftar Lembaga</a></li>
+            <li><a href="#">Promosi</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kontak</h4>
+          <ul>
+            <li><a href="#">info@pilar.id</a></li>
+            <li><a href="#">+62 812 3456 7890</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Bantuan</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 PILAR. Kelompok Se(7) - Kelas E. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="https://github.com/Praaldi/Pilar.git" aria-label="GitHub">💻</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
