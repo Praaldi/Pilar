@@ -1,0 +1,57 @@
+[Aturan 1] Entitas reguler dipetakan langsung menjadi tabel.
+user(user_id, first_name, last_name, email, password_hash, role, created_at)
+FK: -
+
+[Aturan 3] Relasi 1:1 user <-> siswa; FK di tabel anak.
+siswa(siswa_id, user_id, no_telepon, kota, jenjang)
+FK: user_id -> user(user_id)
+
+[Aturan 3] Relasi 1:1 user <-> lembaga; FK di tabel anak.
+lembaga(lembaga_id, user_id, nama_lembaga, kota, kecamatan, alamat_lengkap,
+        no_telepon, email_lembaga, deskripsi, logo_url, status_verifikasi, verified_at)
+FK: user_id -> user(user_id)
+
+[Aturan 3] Relasi 1:1 user <-> admin; FK di tabel anak.
+admin(admin_id, user_id)
+FK: user_id -> user(user_id)
+
+[Aturan 1] Entitas reguler dipetakan langsung menjadi tabel.
+mata_pelajaran(mapel_id, nama_mapel)
+FK: -
+
+[Aturan 5] Relasi M:N lembaga <-> mata_pelajaran -> tabel jembatan, PK gabungan.
+lembaga_mapel(lembaga_id, mapel_id, harga_per_bulan)
+FK: lembaga_id -> lembaga(lembaga_id)
+    mapel_id   -> mata_pelajaran(mapel_id)
+
+[Aturan 4] Relasi 1:N lembaga <-> promosi; FK di sisi N.
+promosi(promosi_id, lembaga_id, judul, deskripsi, tanggal_mulai, tanggal_akhir, status)
+FK: lembaga_id -> lembaga(lembaga_id)
+
+[Aturan 5] Relasi M:N siswa <-> lembaga dengan atribut (rating, komentar).
+ulasan(ulasan_id, siswa_id, lembaga_id, rating, komentar, created_at)
+FK: siswa_id   -> siswa(siswa_id)
+    lembaga_id -> lembaga(lembaga_id)
+
+[Aturan 5] Relasi M:N siswa <-> lembaga (tanpa atribut tambahan selain waktu).
+favorit(favorit_id, siswa_id, lembaga_id, ditambahkan_at)
+FK: siswa_id   -> siswa(siswa_id)
+    lembaga_id -> lembaga(lembaga_id)
+
+[Aturan 4] Relasi 1:N siswa <-> sesi perbandingan; FK di sisi N.
+perbandingan(perbandingan_id, siswa_id, created_at)
+FK: siswa_id -> siswa(siswa_id)
+
+[Aturan 5] Relasi M:N perbandingan <-> lembaga -> tabel jembatan, PK gabungan.
+perbandingan_detail(perbandingan_id, lembaga_id)
+FK: perbandingan_id -> perbandingan(perbandingan_id)
+    lembaga_id      -> lembaga(lembaga_id)
+
+[Aturan 4] Relasi 1:N siswa <-> riwayat; FK di sisi N.
+riwayat_pencarian(riwayat_id, siswa_id, keyword, filter_kota, filter_mapel, dicari_at)
+FK: siswa_id -> siswa(siswa_id)
+
+[Aturan 4] Relasi 1:N lembaga <-> kunjungan; siswa_id nullable (kunjungan anonim).
+kunjungan_profil(kunjungan_id, lembaga_id, siswa_id, dikunjungi_at)
+FK: lembaga_id -> lembaga(lembaga_id)
+    siswa_id   -> siswa(siswa_id)   [nullable, ON DELETE SET NULL]
